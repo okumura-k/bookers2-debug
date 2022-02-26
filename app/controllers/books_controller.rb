@@ -9,6 +9,7 @@ class BooksController < ApplicationController
     @book_comment = BookComment.new
   end
 
+
   def index
     @books = Book.all
     @book = Book.new
