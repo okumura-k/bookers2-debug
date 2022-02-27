@@ -9,6 +9,9 @@ class BooksController < ApplicationController
     @book_comment = BookComment.new
   end
 
+  def new
+    @book = Book.new
+  end
 
   def index
     @books = Book.all
@@ -50,7 +53,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+  params.require(:book).permit(:title, :body, :star)
   end
 
   def ensure_correct_user
